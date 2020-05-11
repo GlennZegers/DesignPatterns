@@ -6,13 +6,15 @@ namespace CircuitBuilder
     {
         public string[] Read(string path)
         {
-            string[] result = File.ReadAllLines(path);
-            foreach (string s in result)
-            {
-                System.Console.WriteLine(s);
-            }
-           
-            return result;
+            // string[] result = File.ReadAllLines(path);
+            // foreach (string s in result)
+            // {
+            //     System.Console.WriteLine(s);
+            // }
+            //
+            // return result;
+
+            return File.ReadAllLines(path);
         }
     }
 }

@@ -38,7 +38,19 @@
         <Reference Include="System.Xml" />
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="InputParser.cs" />
         <Compile Include="InputReader.cs" />
+        <Compile Include="PortFactory.cs" />
+        <Compile Include="Ports\AndPort.cs" />
+        <Compile Include="Ports\InputHighPort.cs" />
+        <Compile Include="Ports\InputLowPort.cs" />
+        <Compile Include="Ports\IPort.cs" />
+        <Compile Include="Ports\NandPort.cs" />
+        <Compile Include="Ports\NorPort.cs" />
+        <Compile Include="Ports\NotPort.cs" />
+        <Compile Include="Ports\OrPort.cs" />
+        <Compile Include="Ports\ProbePort.cs" />
+        <Compile Include="Ports\XorPort.cs" />
         <Compile Include="Program.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
         <Compile Include="TextFileReader.cs" />
