@@ -1,0 +1,6 @@
+C:\Users\glenn\RiderProjects\CircuitBuilder\CircuitBuilder\bin\Debug\CircuitBuilder.exe
+C:\Users\glenn\RiderProjects\CircuitBuilder\CircuitBuilder\bin\Debug\CircuitBuilder.pdb
+C:\Users\glenn\RiderProjects\CircuitBuilder\CircuitBuilder\obj\Debug\CircuitBuilder.csprojAssemblyReference.cache
+C:\Users\glenn\RiderProjects\CircuitBuilder\CircuitBuilder\obj\Debug\CircuitBuilder.csproj.CoreCompileInputs.cache
+C:\Users\glenn\RiderProjects\CircuitBuilder\CircuitBuilder\obj\Debug\CircuitBuilder.exe
+C:\Users\glenn\RiderProjects\CircuitBuilder\CircuitBuilder\obj\Debug\CircuitBuilder.pdb
