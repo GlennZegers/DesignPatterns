@@ -2,18 +2,10 @@
 
 namespace CircuitBuilder
 {
-    public class TextFileReader : InputReader
+    public class TextFileReader : IInputReader
     {
         public string[] Read(string path)
         {
-            // string[] result = File.ReadAllLines(path);
-            // foreach (string s in result)
-            // {
-            //     System.Console.WriteLine(s);
-            // }
-            //
-            // return result;
-
             return File.ReadAllLines(path);
         }
     }
