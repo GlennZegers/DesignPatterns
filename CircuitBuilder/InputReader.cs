@@ -2,7 +2,7 @@
 
 namespace CircuitBuilder
 {
-    public interface InputReader
+    public interface IInputReader
     {
         string[] Read(string path);
     }

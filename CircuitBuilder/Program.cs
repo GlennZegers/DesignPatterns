@@ -1,5 +1,7 @@
 ﻿using System.Globalization;
+using System.Runtime.CompilerServices;
 using System.Threading;
+using CircuitBuilder.Properties;
 
 namespace CircuitBuilder
 {
@@ -9,8 +11,9 @@ namespace CircuitBuilder
         {
             Thread.CurrentThread.CurrentCulture = CultureInfo.InvariantCulture;
             Thread.CurrentThread.CurrentUICulture = CultureInfo.InvariantCulture;
-            TextFileReader t = new TextFileReader();
-            t.Read(@"E:\Circuit1_FullAdder.txt");
+            ConsoleView consoleView = new ConsoleView();
+            TextFileReader textFileReader = new TextFileReader();
+            textFileReader.Read(consoleView.GetInputFromUser());
         }
     }
 }
