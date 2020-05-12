@@ -7,6 +7,7 @@ namespace CircuitBuilder
         public string[] Read(string path)
         {
             return File.ReadAllLines(path);
+            //TODO: error handling
         }
     }
 }

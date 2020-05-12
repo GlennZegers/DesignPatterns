@@ -11,6 +11,8 @@ namespace CircuitBuilder
         private PortFactory _portFactory;
         private IView _view;
         private IInputReader _inputReader;
+        private Dictionary<string, string[]> _edges;
+        private List<IPort> _ports;
 
         public InputParser()
         {
@@ -27,6 +29,7 @@ namespace CircuitBuilder
         public void ParseInput()
         {
             _splitFile();
+            
         }
 
         private void _splitFile()
@@ -64,14 +67,12 @@ namespace CircuitBuilder
 
         private void _createNodeList(List<string> nodes)
         {
-            List<IPort> ports = new List<IPort>();
+            _ports = new List<IPort>();
             
             foreach (var n in nodes)
             {
-                ports.Add(_parseNode(n));
+                _ports.Add(_parseNode(n));
             }
-            
-            // list naar circuitbuilder
         }
 
         private IPort _parseNode(string input)
@@ -80,7 +81,7 @@ namespace CircuitBuilder
             Regex.Replace(input, @"\s+", "");
             input = input.Replace(";", "");
             input = input.Replace(":", "");
-
+            input = input.Replace(" ", String.Empty);
             // Split by tab
             string[] inputParts = input.Split('\t');
 
@@ -94,11 +95,11 @@ namespace CircuitBuilder
 
         private void _createEdgesList(List<string> edgesInput)
         {
-            Dictionary<string, string[]> edges = new Dictionary<string, string[]>();
+            _edges = new Dictionary<string, string[]>();
             
             foreach (var e in edgesInput)
             {
-                _parseEdge(edges, e);
+                _parseEdge(_edges, e);
             }
         }
 
@@ -108,6 +109,7 @@ namespace CircuitBuilder
             Regex.Replace(input, @"\s+", "");
             input = input.Replace(";", "");
             input = input.Replace(":", "");
+            input = input.Replace(" ", String.Empty);
 
             // Split by tab
             string[] inputParts = input.Split('\t');
@@ -126,6 +128,16 @@ namespace CircuitBuilder
         private bool _isComment(string input)
         {
             return input.StartsWith("#");
+        }
+
+        public Dictionary<string, string[]> GetEdges()
+        {
+            return _edges;
+        }
+
+        public List<IPort> GetPorts()
+        {
+            return _ports;
         }
     }
 }

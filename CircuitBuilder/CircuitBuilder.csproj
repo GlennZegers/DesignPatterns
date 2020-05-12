@@ -38,6 +38,7 @@
         <Reference Include="System.Xml" />
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="Circuit.cs" />
         <Compile Include="InputParser.cs" />
         <Compile Include="InputReader.cs" />
         <Compile Include="PortFactory.cs" />
