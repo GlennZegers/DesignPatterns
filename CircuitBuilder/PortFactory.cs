@@ -1,15 +1,21 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace CircuitBuilder
 {
     public class PortFactory
     {
         private Dictionary<string, IPort> _ports;
-        public void CreatePort(string name, string portType)
+
+        public PortFactory()
         {
             _setPorts();
         }
-        
+        public IPort GetPort(string portType)
+        {
+            return _ports[portType];
+        }
+
         private void _setPorts()
         {
             _ports = new Dictionary<string, IPort>();

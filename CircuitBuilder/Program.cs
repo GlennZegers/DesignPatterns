@@ -11,13 +11,11 @@ namespace CircuitBuilder
         {
 
             InputParser inputParser = new InputParser();
-            inputParser.ReadInput();
+            inputParser.ParseInput();
 
             Thread.CurrentThread.CurrentCulture = CultureInfo.InvariantCulture;
             Thread.CurrentThread.CurrentUICulture = CultureInfo.InvariantCulture;
-            ConsoleView consoleView = new ConsoleView();
-            TextFileReader textFileReader = new TextFileReader();
-            textFileReader.Read(consoleView.GetInputFromUser());
+           
 
         }
     }
