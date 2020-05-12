@@ -59,28 +59,18 @@ namespace CircuitBuilder
             }
             
             _createNodeList(inputNodes);
+            _createEdgesList(inputEdges);
         }
 
         private void _createNodeList(List<string> nodes)
         {
-            _portFactory = new PortFactory();
             List<IPort> ports = new List<IPort>();
             
             foreach (var n in nodes)
             {
-                // IPort newPort = _parseNode(n);
-                
-                // if (newPort != null)
-                // {
-                Console.WriteLine(_parseNode(n));
                 ports.Add(_parseNode(n));
-                //}
             }
-
-            foreach (var port in ports)
-            {
-                Console.WriteLine(port.GetType() + " " + port.NodeIdentifier);
-            }
+            
             // list naar circuitbuilder
         }
 
@@ -94,13 +84,43 @@ namespace CircuitBuilder
             // Split by tab
             string[] inputParts = input.Split('\t');
 
+            _portFactory = new PortFactory();
             IPort port = _portFactory.GetPort(inputParts[1]);
-            Console.WriteLine(inputParts[0] + " : " + inputParts[1]);
             port.NodeIdentifier = inputParts[0];
-            Console.WriteLine(port.NodeIdentifier);
 
             return port;
 
+        }
+
+        private void _createEdgesList(List<string> edgesInput)
+        {
+            Dictionary<string, string[]> edges = new Dictionary<string, string[]>();
+            
+            foreach (var e in edgesInput)
+            {
+                _parseEdge(edges, e);
+            }
+        }
+
+        private void _parseEdge(Dictionary<string, string[]> dictionary, string input)
+        {
+            // Remove all whitespaces and ; and :
+            Regex.Replace(input, @"\s+", "");
+            input = input.Replace(";", "");
+            input = input.Replace(":", "");
+
+            // Split by tab
+            string[] inputParts = input.Split('\t');
+
+            string nodeSource = inputParts[0];
+            string[] nodeTargets = _createArrayTargets(inputParts[1]);
+
+            dictionary[nodeSource] = nodeTargets;
+        }
+
+        private string[] _createArrayTargets(string input)
+        {
+            return input.Split(',');
         }
 
         private bool _isComment(string input)
