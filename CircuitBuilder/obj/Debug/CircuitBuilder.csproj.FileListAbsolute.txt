@@ -4,3 +4,9 @@ C:\Users\glenn\RiderProjects\CircuitBuilder\CircuitBuilder\obj\Debug\CircuitBuil
 C:\Users\glenn\RiderProjects\CircuitBuilder\CircuitBuilder\obj\Debug\CircuitBuilder.csproj.CoreCompileInputs.cache
 C:\Users\glenn\RiderProjects\CircuitBuilder\CircuitBuilder\obj\Debug\CircuitBuilder.exe
 C:\Users\glenn\RiderProjects\CircuitBuilder\CircuitBuilder\obj\Debug\CircuitBuilder.pdb
+D:\School\Projecten\Rider projecten\Circuitbuilder\DesignPatterns\CircuitBuilder\bin\Debug\CircuitBuilder.exe
+D:\School\Projecten\Rider projecten\Circuitbuilder\DesignPatterns\CircuitBuilder\bin\Debug\CircuitBuilder.pdb
+D:\School\Projecten\Rider projecten\Circuitbuilder\DesignPatterns\CircuitBuilder\obj\Debug\CircuitBuilder.csprojAssemblyReference.cache
+D:\School\Projecten\Rider projecten\Circuitbuilder\DesignPatterns\CircuitBuilder\obj\Debug\CircuitBuilder.csproj.CoreCompileInputs.cache
+D:\School\Projecten\Rider projecten\Circuitbuilder\DesignPatterns\CircuitBuilder\obj\Debug\CircuitBuilder.exe
+D:\School\Projecten\Rider projecten\Circuitbuilder\DesignPatterns\CircuitBuilder\obj\Debug\CircuitBuilder.pdb
