@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace CircuitBuilder
+namespace CircuitBuilder.Ports
 {
     public class InputHighPort : IPort
     {

@@ -1,7 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
-namespace CircuitBuilder
+namespace CircuitBuilder.Ports
 {
     public class PortFactory
     {

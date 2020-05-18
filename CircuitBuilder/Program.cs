@@ -1,7 +1,5 @@
 ﻿using System.Globalization;
-using System.Runtime.CompilerServices;
 using System.Threading;
-using CircuitBuilder.Properties;
 
 namespace CircuitBuilder
 {
