@@ -20,11 +20,11 @@ namespace CircuitBuilder
             }
         }
 
-        public void Start(  List<IPort> ports)
+        public void Start(List<IPort> ports)
         {
             foreach (var port in ports)
             {
-                if (port.NodeIdentifier == "A" || port.NodeIdentifier == "B" || port.NodeIdentifier == "Cin")
+                if (port.IsStartPort)
                 {
                     port.CalculateOutput(true);
                 }
