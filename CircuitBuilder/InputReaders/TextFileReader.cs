@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Text.RegularExpressions;
-using CircuitBuilder.Ports;
 
 namespace CircuitBuilder.InputReaders
 {
@@ -82,7 +80,7 @@ namespace CircuitBuilder.InputReaders
             Regex.Replace(input, @"\s+", "");
             input = input.Replace(";", "");
             input = input.Replace(":", "");
-            input = input.Replace(" ", String.Empty);
+            input = input.Replace(" ", string.Empty);
 
             return input.Split('\t');
         }
