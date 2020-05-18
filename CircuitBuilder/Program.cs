@@ -8,12 +8,15 @@ namespace CircuitBuilder
     internal class Program
     {
         public static void Main(string[] args)
-        {
+        {            
             Thread.CurrentThread.CurrentCulture = CultureInfo.InvariantCulture;
             Thread.CurrentThread.CurrentUICulture = CultureInfo.InvariantCulture;
-            ConsoleView consoleView = new ConsoleView();
-            TextFileReader textFileReader = new TextFileReader();
-            textFileReader.Read(consoleView.GetInputFromUser());
+
+            InputParser inputParser = new InputParser();
+            inputParser.ParseInput();
+            
+            Circuit circuit = new Circuit();
+            circuit.Build(inputParser.GetEdges(), inputParser.GetPorts());
         }
     }
 }
