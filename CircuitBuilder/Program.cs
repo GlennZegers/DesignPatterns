@@ -14,7 +14,9 @@ namespace CircuitBuilder
             inputParser.ParseInput();
             
             Circuit circuit = new Circuit();
-            circuit.Build(inputParser.GetEdges(), inputParser.GetPorts());
+            var ports = inputParser.GetPorts();
+            circuit.Build(inputParser.GetEdges(),ports);
+            circuit.Start(ports);
         }
     }
 }

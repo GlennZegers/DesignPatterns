@@ -11,12 +11,22 @@ namespace CircuitBuilder
             foreach (var keyValuePair in edges)
             {
                 var inputPort = _getPortFromList(ports, keyValuePair.Key);
-                Console.WriteLine(inputPort);
                 foreach (var nodeTarget in keyValuePair.Value)
                 {
                     var outputPort = _getPortFromList(ports, nodeTarget);
                     inputPort.NextPorts.Add(outputPort);
                     outputPort.PreviousPorts.Add(inputPort);
+                }
+            }
+        }
+
+        public void Start(  List<IPort> ports)
+        {
+            foreach (var port in ports)
+            {
+                if (port.NodeIdentifier == "A" || port.NodeIdentifier == "B" || port.NodeIdentifier == "Cin")
+                {
+                    port.CalculateOutput(true);
                 }
             }
         }
