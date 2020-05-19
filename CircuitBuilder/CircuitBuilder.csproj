@@ -39,7 +39,9 @@
     </ItemGroup>
     <ItemGroup>
         <Compile Include="Circuit.cs" />
+        <Compile Include="CircuitBuilder.cs" />
         <Compile Include="ConsoleView.cs" />
+        <Compile Include="IBuilder.cs" />
         <Compile Include="InputParser.cs" />
         <Compile Include="InputReaders\IInputReader.cs" />
         <Compile Include="InputReaders\InputReaderFactory.cs" />

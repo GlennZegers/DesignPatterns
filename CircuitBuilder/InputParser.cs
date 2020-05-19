@@ -11,6 +11,7 @@ namespace CircuitBuilder
         private Dictionary<string, string[]> _edges;
         private List<string[]> _nodes;
         private List<IPort> _ports;
+        private IBuilder _builder;
 
         public InputParser()
         {
@@ -39,14 +40,17 @@ namespace CircuitBuilder
 
         private void _createPortList()
         {
-            _ports = new List<IPort>();
+            _builder = new CircuitBuilder();
             
             foreach (var n in _nodes)
             {
-                _ports.Add(_parseNode(n));
+                _builder.AddPort(n[0], n[1]);
             }
+            _builder.ConnectPorts(_edges);
+            _ports = _builder.GetPorts();
         }
 
+        //niet meer nodig?
         private IPort _parseNode(string[] input)
         { 
             PortFactory portFactory = new PortFactory();

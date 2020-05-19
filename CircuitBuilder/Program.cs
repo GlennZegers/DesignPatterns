@@ -15,7 +15,6 @@ namespace CircuitBuilder
             
             Circuit circuit = new Circuit();
             var ports = inputParser.GetPorts();
-            circuit.Build(inputParser.GetEdges(),ports);
             circuit.Start(ports);
         }
     }
