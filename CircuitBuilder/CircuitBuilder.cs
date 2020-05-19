@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using CircuitBuilder.Ports;
 
 namespace CircuitBuilder
@@ -32,12 +33,32 @@ namespace CircuitBuilder
                     inputPort.NextPorts.Add(outputPort);
                     outputPort.PreviousPorts.Add(inputPort);
                 }
+
+       
             }
         }
 
         public List<IPort> GetPorts()
         {
+            _testPorts();
             return this._ports;
+        }
+
+        private void _testPorts()
+        {
+            foreach (var port in this._ports)
+            {
+                if (port.NextPorts.Count == 0)
+                {
+                    throw new Exception(port.NodeIdentifier + " is not connected to a port");
+                }
+
+                if (port.MinimalInputCount > port.PreviousPorts.Count)
+                {
+                    throw new Exception(port.NodeIdentifier + " should have at least " + port.MinimalInputCount + " input ports");
+                }
+            }
+
         }
         
         private IPort _getPortFromList( string key)

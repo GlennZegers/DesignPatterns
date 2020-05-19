@@ -7,47 +7,96 @@ namespace CircuitBuilder.Visitors
     {
         public void Visit(AndPort port)
         {
-            Console.WriteLine("Andport: output: " + port.Output );
+            var fullString = "Andport "+ port.NodeIdentifier +" receives ";
+            foreach (var previousPort in port.PreviousPorts)
+            {
+                fullString += previousPort.Output + " from " + previousPort.NodeIdentifier + " ,";
+            }
+
+            fullString += "so output is: " + port.Output;
+            Console.WriteLine(fullString);
         }
 
         public void Visit(InputHighPort port)
         {
-            Console.WriteLine("ihigh: output: " + port.Output);
+            Console.WriteLine(port.NodeIdentifier + " outputs true");
         }
 
         public void Visit(InputLowPort port)
         {
-            Console.WriteLine("ilow: output: " + port.Output);
+            Console.WriteLine(port.NodeIdentifier + " outputs false");
         }
 
         public void Visit(NandPort port)
         {
-            Console.WriteLine("nand: output: " + port.Output);
+            var fullString = "Nandport "+ port.NodeIdentifier +" receives ";
+            foreach (var previousPort in port.PreviousPorts)
+            {
+                fullString += previousPort.Output + " from " + previousPort.NodeIdentifier + " ,";
+            }
+
+            fullString += "so output is: " + port.Output;
+            Console.WriteLine(fullString);
         }
 
         public void Visit(NorPort port)
         {
-            Console.WriteLine("nor: output: " + port.Output);
+            var fullString = "Norport "+ port.NodeIdentifier +" receives ";
+            foreach (var previousPort in port.PreviousPorts)
+            {
+                fullString += previousPort.Output + " from " + previousPort.NodeIdentifier + " ,";
+            }
+
+            fullString += "so output is: " + port.Output;
+            Console.WriteLine(fullString);
         }
 
         public void Visit(NotPort port)
         {
-            Console.WriteLine("not: output: " + port.Output);
+            var fullString = "Notport "+ port.NodeIdentifier +" receives ";
+            foreach (var previousPort in port.PreviousPorts)
+            {
+                fullString += previousPort.Output + " from " + previousPort.NodeIdentifier + " ,";
+            }
+
+            fullString += "so output is: " + port.Output;
+            Console.WriteLine(fullString);
         }
 
         public void Visit(OrPort port)
         {
-            Console.WriteLine("or: output: " + port.Output);
+            var fullString = "Orport "+ port.NodeIdentifier +" receives ";
+            foreach (var previousPort in port.PreviousPorts)
+            {
+                fullString += previousPort.Output + " from " + previousPort.NodeIdentifier + " ,";
+            }
+
+            fullString += "so output is: " + port.Output;
+            Console.WriteLine(fullString);
         }
 
         public void Visit(ProbePort port)
         {
-            Console.WriteLine("probe: output: " + port.Output);
+            var fullString = "!RESULT! Probeport "+ port.NodeIdentifier +" receives ";
+            foreach (var previousPort in port.PreviousPorts)
+            {
+                fullString += previousPort.Output + " from " + previousPort.NodeIdentifier + " ,";
+            }
+
+            fullString += "so output is: " + port.Output;
+            Console.WriteLine(fullString);
         }
 
         public void Visit(XorPort port)
         {
-            Console.WriteLine("xor: output: " + port.Output);
+            var fullString = "Xorport "+ port.NodeIdentifier +" receives ";
+            foreach (var previousPort in port.PreviousPorts)
+            {
+                fullString += previousPort.Output + " from " + previousPort.NodeIdentifier + " ,";
+            }
+
+            fullString += "so output is: " + port.Output;
+            Console.WriteLine(fullString);
         }
     }
 }

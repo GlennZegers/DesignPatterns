@@ -8,16 +8,6 @@ namespace CircuitBuilder
 {
     public class ConsoleView : IView
     {
-        public void Render()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void RenderPort()
-        {
-            throw new System.NotImplementedException();
-        }
-
         public void RenderOutputs(List<IPort> ports)
         {
             var portOutputVisitor = new PortOutputVisitor();

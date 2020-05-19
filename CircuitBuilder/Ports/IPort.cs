@@ -6,6 +6,7 @@ namespace CircuitBuilder.Ports
     public interface IPort
     {
         List<bool> Input { get; set; }
+        int MinimalInputCount { get; }
         bool Output { get; set; }
         bool IsStartPort { get; set; }
         string NodeIdentifier { get; set; }
