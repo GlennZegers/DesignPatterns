@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
+using CircuitBuilder.Ports;
+using CircuitBuilder.Visitors;
 
 namespace CircuitBuilder
 {
@@ -15,9 +18,14 @@ namespace CircuitBuilder
             throw new System.NotImplementedException();
         }
 
-        public void RenderOutput()
+        public void RenderOutputs(List<IPort> ports)
         {
-            throw new System.NotImplementedException();
+            var portOutputVisitor = new PortOutputVisitor();
+
+            foreach (var port in ports)
+            {
+                port.Accept(portOutputVisitor);
+            }
         }
 
         public string GetInputFromUser()

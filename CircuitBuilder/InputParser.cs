@@ -13,14 +13,14 @@ namespace CircuitBuilder
         private List<IPort> _ports;
         private IBuilder _builder;
 
-        public InputParser()
+        public InputParser(IView view)
         {
+            _view = view;
             _getFileInput();
         }
 
         private void _getFileInput()
         {
-            _view = new ConsoleView();
             var path = _view.GetInputFromUser();
             
             var extension = Path.GetExtension(path);

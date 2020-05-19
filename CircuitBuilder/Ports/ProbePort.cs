@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using CircuitBuilder.Visitors;
 
 namespace CircuitBuilder.Ports
 {
     public class ProbePort : IPort
     {
         public List<bool> Input { get; set; }
+        public bool Output { get; set; }
         public bool IsStartPort { get; set; }
         public string NodeIdentifier { get; set; }
         public List<IPort> PreviousPorts { get; set; }
@@ -19,7 +21,13 @@ namespace CircuitBuilder.Ports
         }
         public void CalculateOutput(bool input)
         {
+            this.Output = input;
             Console.WriteLine(this.NodeIdentifier + input);
+        }
+
+        public void Accept(IPortVisitor visitor)
+        {
+            visitor.Visit(this);
         }
     }
 }

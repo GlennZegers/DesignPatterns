@@ -9,13 +9,14 @@ namespace CircuitBuilder
         {            
             Thread.CurrentThread.CurrentCulture = CultureInfo.InvariantCulture;
             Thread.CurrentThread.CurrentUICulture = CultureInfo.InvariantCulture;
-
-            InputParser inputParser = new InputParser();
+            IView view = new ConsoleView();
+            InputParser inputParser = new InputParser(view);
             inputParser.ParseInput();
             
             Circuit circuit = new Circuit();
             var ports = inputParser.GetPorts();
             circuit.Start(ports);
+            view.RenderOutputs(ports);
         }
     }
 }

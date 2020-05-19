@@ -1,10 +1,12 @@
 ﻿using System.Collections.Generic;
+using CircuitBuilder.Visitors;
 
 namespace CircuitBuilder.Ports
 {
     public class AndPort : IPort
     {
         public List<bool> Input { get; set; }
+        public bool Output { get; set; }
         public bool IsStartPort { get; set; }
         public string NodeIdentifier { get; set; }
         public List<IPort> PreviousPorts { get; set; }
@@ -30,11 +32,19 @@ namespace CircuitBuilder.Ports
                         output = false;
                     }
                 }
+
+                this.Output = output;
                 foreach (var nextPort in this.NextPorts)
                 {
                     nextPort.CalculateOutput(output);
                 }
             }
+        }
+
+        public void Accept(IPortVisitor visitor)
+        {
+            
+            visitor.Visit(this);
         }
     }
 }
