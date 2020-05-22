@@ -7,5 +7,6 @@ namespace CircuitBuilder
     {
         void RenderOutputs(List<IPort> ports);
         string GetInputFromUser();
+        void UserMakesNextMove(Application app);
     }
 }

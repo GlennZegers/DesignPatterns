@@ -1,0 +1,215 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="CircuitBuilder.Circuit">
+    <Position X="8" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAgEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Circuit.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CircuitBuilder.ConsoleView" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9.75" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAAAAAAAAIAAAAAAAAAAAAAABAAAAAAgAA=</HashCode>
+      <FileName>ConsoleView.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="CircuitBuilder.InputParser">
+    <Position X="12" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACABAAAAAAAAgAAABgAAAAAAAAAAEAAGACAAAACAA=</HashCode>
+      <FileName>InputParser.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_view" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Field Name="_ports" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="CircuitBuilder.Program">
+    <Position X="12" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CircuitBuilder.InputReaders.InputReaderFactory">
+    <Position X="9.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAQIAA=</HashCode>
+      <FileName>InputReaders\InputReaderFactory.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="_inputReaders" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="CircuitBuilder.InputReaders.TextFileReader" BaseTypeListCollapsed="true">
+    <Position X="8" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIBAAEAAAAAIAAABAAAAgAAAAAAAAAABAAAAAACA=</HashCode>
+      <FileName>InputReaders\TextFileReader.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="CircuitBuilder.Ports.AndPort" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="17" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAAAAAAIAAAEAAAEIAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>Ports\AndPort.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="IPort" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="CircuitBuilder.Ports.InputHighPort" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="17" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAAAAAAIAAAEAAAEIAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>Ports\InputHighPort.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="IPort" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="CircuitBuilder.Ports.InputLowPort" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="17" Y="1.25" Width="1.5" />
+    <AssociationLine Name="IPort" Type="CircuitBuilder.Ports.IPort" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="17" Y="1.531" />
+        <Point X="15.75" Y="1.531" />
+        <Point X="15.75" Y="2.5" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAAAAAAIAAAEAAAEIAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>Ports\InputLowPort.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="IPort" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="CircuitBuilder.Ports.NandPort" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="17" Y="5" Width="1.5" />
+    <AssociationLine Name="IPort" Type="CircuitBuilder.Ports.IPort" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="17" Y="5.281" />
+        <Point X="15.875" Y="5.281" />
+        <Point X="15.875" Y="4.632" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAAAAAAIAAAEAAAEIAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>Ports\NandPort.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="IPort" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="CircuitBuilder.Ports.NorPort" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="17" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAAAAAAIAAAEAAAEIAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>Ports\NorPort.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="IPort" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="CircuitBuilder.Ports.NotPort" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="17" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAAAAAAIAAAEAAAEIAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>Ports\NotPort.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="IPort" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="CircuitBuilder.Ports.OrPort" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="17" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAAAAAAIAAAEAAAEIAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>Ports\OrPort.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="IPort" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="CircuitBuilder.Ports.PortFactory">
+    <Position X="12" Y="0.5" Width="1.5" />
+    <AssociationLine Name="_ports" Type="CircuitBuilder.Ports.IPort" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="13.5" Y="1.156" />
+        <Point X="14.812" Y="1.156" />
+        <Point X="14.812" Y="2.5" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAACAAAAAAA=</HashCode>
+      <FileName>Ports\PortFactory.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="_ports" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="CircuitBuilder.Ports.ProbePort" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="17" Y="6.5" Width="1.5" />
+    <AssociationLine Name="IPort" Type="CircuitBuilder.Ports.IPort" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="17" Y="6.781" />
+        <Point X="15.5" Y="6.781" />
+        <Point X="15.5" Y="4.632" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAAAAAAIAAAEAAAEIAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>Ports\ProbePort.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="IPort" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="CircuitBuilder.Ports.XorPort" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="17" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAAAAAAIAAAEAAAEIAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>Ports\XorPort.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="IPort" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Interface Name="CircuitBuilder.IView">
+    <Position X="9.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAAAAAAAAIAAAAAAAAAAAAAABAAAAAAgAA=</HashCode>
+      <FileName>View.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="CircuitBuilder.InputReaders.IInputReader">
+    <Position X="8" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>InputReaders\IInputReader.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="CircuitBuilder.Ports.IPort">
+    <Position X="14.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAEAAAEIAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>Ports\IPort.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

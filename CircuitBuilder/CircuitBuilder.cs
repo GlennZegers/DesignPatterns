@@ -60,7 +60,7 @@ namespace CircuitBuilder
             }
 
         }
-        
+
         private IPort _getPortFromList( string key)
         {    
             foreach (var port in this._ports)

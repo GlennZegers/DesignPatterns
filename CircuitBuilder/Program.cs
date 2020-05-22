@@ -10,13 +10,9 @@ namespace CircuitBuilder
             Thread.CurrentThread.CurrentCulture = CultureInfo.InvariantCulture;
             Thread.CurrentThread.CurrentUICulture = CultureInfo.InvariantCulture;
             IView view = new ConsoleView();
-            InputParser inputParser = new InputParser(view);
-            inputParser.ParseInput();
             
-            Circuit circuit = new Circuit();
-            var ports = inputParser.GetPorts();
-            circuit.Start(ports);
-            view.RenderOutputs(ports);
+            Application application = new Application(view);
+            application.StartNewCircuit();
         }
     }
 }

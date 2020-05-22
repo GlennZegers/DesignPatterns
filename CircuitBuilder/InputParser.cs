@@ -38,6 +38,22 @@ namespace CircuitBuilder
             _createPortList();
         }
 
+        public bool ChangeNode(string nodeName, string input)
+        {
+            foreach (var node in _nodes)
+            {
+                if (node[0] == nodeName)
+                {
+                    node[0] = nodeName;
+                    node[1] = input;
+
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
         private void _createPortList()
         {
             _builder = new CircuitBuilder();
@@ -59,6 +75,11 @@ namespace CircuitBuilder
 
             return port;
 
+        }
+
+        public IBuilder GetBuilder()
+        {
+            return _builder;
         }
 
         public Dictionary<string, string[]> GetEdges()
