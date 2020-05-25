@@ -9,6 +9,7 @@ namespace CircuitBuilder.Ports
         public List<bool> Input { get; set; }
         public int MinimalInputCount { get; }
         public bool Output { get; set; }
+        public bool IsEndPort { get; set; }
         public string NodeIdentifier { get; set; }
         public List<IPort> PreviousPorts { get; set; }
         public List<IPort> NextPorts { get; set; }
@@ -20,6 +21,7 @@ namespace CircuitBuilder.Ports
             Input = new List<bool>();
             IsStartPort = true;
             MinimalInputCount = 0;
+            IsEndPort = false;
         }
 
         public void CalculateOutput(bool input)

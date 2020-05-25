@@ -33,8 +33,6 @@ namespace CircuitBuilder
                     inputPort.NextPorts.Add(outputPort);
                     outputPort.PreviousPorts.Add(inputPort);
                 }
-
-       
             }
         }
 
@@ -48,7 +46,7 @@ namespace CircuitBuilder
         {
             foreach (var port in this._ports)
             {
-                if (port.NextPorts.Count == 0)
+                if (port.NextPorts.Count == 0 && !port.IsEndPort)
                 {
                     throw new Exception(port.NodeIdentifier + " is not connected to a port");
                 }
