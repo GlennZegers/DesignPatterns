@@ -1,11 +1,14 @@
 ﻿using System.Collections.Generic;
+using CircuitBuilder.Visitors;
 
 namespace CircuitBuilder.Ports
 {
     public class NorPort : IPort
     {
         public List<bool> Input { get; set; }
-        
+        public int MinimalInputCount { get; }
+        public bool Output { get; set; }
+
         public bool IsStartPort { get; set; }
         public string NodeIdentifier { get; set; }
         public List<IPort> PreviousPorts { get; set; }
@@ -16,6 +19,7 @@ namespace CircuitBuilder.Ports
             NextPorts = new List<IPort>();
             Input = new List<bool>();
             IsStartPort = false;
+            MinimalInputCount = 2;
         }
         
         public void CalculateOutput(bool input)
@@ -31,11 +35,17 @@ namespace CircuitBuilder.Ports
                         output = false;
                     }
                 }
+                this.Output = output;
                 foreach (var nextPort in this.NextPorts)
                 {
                     nextPort.CalculateOutput(output);
                 }
             }
+        }
+
+        public void Accept(IPortVisitor visitor)
+        {
+            visitor.Visit(this);
         }
     }
 }
