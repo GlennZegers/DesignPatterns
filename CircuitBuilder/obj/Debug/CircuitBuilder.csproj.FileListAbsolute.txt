@@ -10,3 +10,7 @@ D:\School\Projecten\Rider projecten\Circuitbuilder\DesignPatterns\CircuitBuilder
 D:\School\Projecten\Rider projecten\Circuitbuilder\DesignPatterns\CircuitBuilder\obj\Debug\CircuitBuilder.csproj.CoreCompileInputs.cache
 D:\School\Projecten\Rider projecten\Circuitbuilder\DesignPatterns\CircuitBuilder\obj\Debug\CircuitBuilder.exe
 D:\School\Projecten\Rider projecten\Circuitbuilder\DesignPatterns\CircuitBuilder\obj\Debug\CircuitBuilder.pdb
+C:\Users\glenn\RiderProjects\CircuitBuilder\CircuitBuilder\bin\Debug\nunit.framework.dll
+C:\Users\glenn\RiderProjects\CircuitBuilder\CircuitBuilder\bin\Debug\nunit.framework.pdb
+C:\Users\glenn\RiderProjects\CircuitBuilder\CircuitBuilder\bin\Debug\nunit.framework.xml
+C:\Users\glenn\RiderProjects\CircuitBuilder\CircuitBuilder\obj\Debug\CircuitBuilder.csproj.CopyComplete

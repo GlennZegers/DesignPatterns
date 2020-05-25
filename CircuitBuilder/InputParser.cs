@@ -11,15 +11,16 @@ namespace CircuitBuilder
         private Dictionary<string, string[]> _edges;
         private List<string[]> _nodes;
         private List<IPort> _ports;
+        private IBuilder _builder;
 
-        public InputParser()
+        public InputParser(IView view)
         {
+            _view = view;
             _getFileInput();
         }
 
         private void _getFileInput()
         {
-            _view = new ConsoleView();
             var path = _view.GetInputFromUser();
             
             var extension = Path.GetExtension(path);
@@ -37,16 +38,35 @@ namespace CircuitBuilder
             _createPortList();
         }
 
+        public bool ChangeNode(string nodeName, string input)
+        {
+            foreach (var node in _nodes)
+            {
+                if (node[0] == nodeName)
+                {
+                    node[0] = nodeName;
+                    node[1] = input;
+
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
         private void _createPortList()
         {
-            _ports = new List<IPort>();
+            _builder = new CircuitBuilder();
             
             foreach (var n in _nodes)
             {
-                _ports.Add(_parseNode(n));
+                _builder.AddPort(n[0], n[1]);
             }
+            _builder.ConnectPorts(_edges);
+            _ports = _builder.GetPorts();
         }
 
+        //niet meer nodig?
         private IPort _parseNode(string[] input)
         { 
             PortFactory portFactory = new PortFactory();
@@ -55,6 +75,11 @@ namespace CircuitBuilder
 
             return port;
 
+        }
+
+        public IBuilder GetBuilder()
+        {
+            return _builder;
         }
 
         public Dictionary<string, string[]> GetEdges()
