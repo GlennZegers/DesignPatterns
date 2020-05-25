@@ -53,7 +53,7 @@ namespace CircuitBuilder
             foreach (var port in this._ports)
             {
                 // Check if current port has more than one next port, if not, circuit is not connected
-                if (port.NextPorts.Count == 0)
+                if (port.NextPorts.Count == 0 && !port.IsEndPort)
                 {
                     throw new Exception(port.NodeIdentifier + " is not connected to a port");
                 }
