@@ -9,9 +9,8 @@ namespace CircuitBuilder
         {            
             Thread.CurrentThread.CurrentCulture = CultureInfo.InvariantCulture;
             Thread.CurrentThread.CurrentUICulture = CultureInfo.InvariantCulture;
-            IView view = new ConsoleView();
-            
-            Application application = new Application(view);
+
+            Application application = new Application();
             application.StartNewCircuit();
         }
     }

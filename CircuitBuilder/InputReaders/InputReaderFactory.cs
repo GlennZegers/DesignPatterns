@@ -2,6 +2,7 @@
 
 namespace CircuitBuilder.InputReaders
 {
+    // Factory pattern
     public class InputReaderFactory
     {
         private Dictionary<string, IInputReader> _inputReaders;

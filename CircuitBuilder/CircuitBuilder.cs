@@ -4,7 +4,8 @@ using CircuitBuilder.Ports;
 
 namespace CircuitBuilder
 {
-    public class CircuitBuilder :IBuilder
+    // Builder pattern
+    public class CircuitBuilder : IBuilder
     {
         private List<IPort> _ports;
         private PortFactory _portFactory; 
@@ -24,11 +25,16 @@ namespace CircuitBuilder
 
         public void ConnectPorts(Dictionary<string, string[]> edges)
         {
+            // Go through all edges
             foreach (var keyValuePair in edges)
             {
+                // Get port
                 var inputPort = _getPortFromList(keyValuePair.Key);
+                
+                // Go through all targets of specific edge
                 foreach (var nodeTarget in keyValuePair.Value)
                 {
+                    // Add previous and next targets to edge
                     var outputPort = _getPortFromList(nodeTarget);
                     inputPort.NextPorts.Add(outputPort);
                     outputPort.PreviousPorts.Add(inputPort);
@@ -46,11 +52,13 @@ namespace CircuitBuilder
         {
             foreach (var port in this._ports)
             {
+                // Check if current port has more than one next port, if not, circuit is not connected
                 if (port.NextPorts.Count == 0 && !port.IsEndPort)
                 {
                     throw new Exception(port.NodeIdentifier + " is not connected to a port");
                 }
 
+                // Check if port has minimal one input, if not, circuit is not connected
                 if (port.MinimalInputCount > port.PreviousPorts.Count)
                 {
                     throw new Exception(port.NodeIdentifier + " should have at least " + port.MinimalInputCount + " input ports");

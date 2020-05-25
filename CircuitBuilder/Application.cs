@@ -1,4 +1,4 @@
-﻿using System;
+﻿using CircuitBuilder.Views;
 
 namespace CircuitBuilder
 {
@@ -6,27 +6,29 @@ namespace CircuitBuilder
     {
         private InputParser _inputParser;
         private Circuit _circuit;
-        private IView _view;
+        private FileInput _fileInput;
+        private IConsoleView _consoleView;
 
-        public Application(IView view)
+        public Application()
         {
-            _view = view;
+            _fileInput = new FileInput();
+            _consoleView = new ConsoleView();
         }
         
+        // Generates a whole new circuit with new file
         public void StartNewCircuit()
         {
-            _inputParser = new InputParser(_view);
+            _inputParser = new InputParser(_fileInput);
             _inputParser.ParseInput();
             
             _circuit = new Circuit();
             var ports = _inputParser.GetPorts();
             _circuit.Start(ports);
             
-            _view.RenderOutputs(ports);
-            
-            _view.UserMakesNextMove(this);
+            _consoleView.Print(ports, this);
         }
 
+        // Regenerates current circuit with changed input nodes
         public void ReGenerateCircuit()
         {
             _inputParser.ParseInput();
@@ -34,16 +36,14 @@ namespace CircuitBuilder
             var ports = _inputParser.GetPorts();
             _circuit.Start(ports);
             
-            _view.RenderOutputs(ports);
-            
-            _view.UserMakesNextMove(this);
+            _consoleView.Print(ports, this);
         }
 
         public InputParser GetInputParser()
         {
             if (_inputParser == null)
             {
-                return _inputParser = new InputParser(_view);
+                return _inputParser = new InputParser(_fileInput);
             }
 
             return _inputParser;
