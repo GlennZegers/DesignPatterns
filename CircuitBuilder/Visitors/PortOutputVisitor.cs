@@ -3,6 +3,7 @@ using CircuitBuilder.Ports;
 
 namespace CircuitBuilder.Visitors
 {
+    // Visitor pattern
     public class PortOutputVisitor : IPortVisitor
     {
         public void Visit(AndPort port)

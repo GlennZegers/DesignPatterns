@@ -41,7 +41,6 @@
         <Compile Include="Application.cs" />
         <Compile Include="Circuit.cs" />
         <Compile Include="CircuitBuilder.cs" />
-        <Compile Include="ConsoleView.cs" />
         <Compile Include="IBuilder.cs" />
         <Compile Include="InputParser.cs" />
         <Compile Include="InputReaders\IInputReader.cs" />
@@ -60,7 +59,12 @@
         <Compile Include="Ports\XorPort.cs" />
         <Compile Include="Program.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
-        <Compile Include="View.cs" />
+        <Compile Include="Views\ChangeNode.cs" />
+        <Compile Include="Views\ConsoleView.cs" />
+        <Compile Include="Views\FileInput.cs" />
+        <Compile Include="Views\IConsoleView.cs" />
+        <Compile Include="Views\PortOutput.cs" />
+        <Compile Include="Views\UserInput.cs" />
         <Compile Include="Visitors\IPortVisitor.cs" />
         <Compile Include="Visitors\PortOutputVisitor.cs" />
     </ItemGroup>

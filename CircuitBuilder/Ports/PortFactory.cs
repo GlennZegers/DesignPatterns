@@ -2,6 +2,7 @@
 
 namespace CircuitBuilder.Ports
 {
+    // Factory pattern
     public class PortFactory
     {
         private Dictionary<string, IPort> _ports;

@@ -24,6 +24,7 @@ namespace CircuitBuilder.Ports
         public void CalculateOutput(bool input)
         {
             this.Input.Add(input);
+            // If port received all input, start calculating
             if (this.Input.Count == this.PreviousPorts.Count)
             {
                 var output = true;
@@ -45,7 +46,6 @@ namespace CircuitBuilder.Ports
 
         public void Accept(IPortVisitor visitor)
         {
-            
             visitor.Visit(this);
         }
     }

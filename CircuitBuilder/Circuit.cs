@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using CircuitBuilder.Ports;
 
 namespace CircuitBuilder
@@ -10,6 +9,7 @@ namespace CircuitBuilder
         {
             foreach (var port in ports)
             {
+                // Find first port, start calculating output there
                 if (port.IsStartPort)
                 {
                     port.CalculateOutput(true);
