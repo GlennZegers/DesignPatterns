@@ -9,9 +9,11 @@ namespace CircuitBuilder.Ports
         int MinimalInputCount { get; }
         bool Output { get; set; }
         bool IsStartPort { get; set; }
+        bool IsEndPort { get; set; }
         string NodeIdentifier { get; set; }
         List<IPort> PreviousPorts  { get; set; }
         List<IPort> NextPorts  { get; set; }
+        
         void CalculateOutput(bool input);
 
         void Accept(IPortVisitor visitor);

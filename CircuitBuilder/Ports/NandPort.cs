@@ -8,6 +8,7 @@ namespace CircuitBuilder.Ports
         public List<bool> Input { get; set; }
         public int MinimalInputCount { get; }
         public bool Output { get; set; }
+        public bool IsEndPort { get; set; }
         public string NodeIdentifier { get; set; }
         public List<IPort> PreviousPorts { get; set; }
         public List<IPort> NextPorts { get; set; }
@@ -20,24 +21,25 @@ namespace CircuitBuilder.Ports
             Input = new List<bool>();
             IsStartPort = false;
             MinimalInputCount = 2;
+            IsEndPort = false;
         }
         public void CalculateOutput(bool input)
         {
             this.Input.Add(input);
             if (this.Input.Count == this.PreviousPorts.Count)
             {
-                var output = false;
+                var allIsTrue = true;
                 foreach (var b in this.Input)
                 {
-                    if (b)
+                    if (!b)
                     {
-                        output = true;
+                        allIsTrue = false;
                     }
                 }
-                this.Output = output;
+                this.Output = !allIsTrue;
                 foreach (var nextPort in this.NextPorts)
                 {
-                    nextPort.CalculateOutput(output);
+                    nextPort.CalculateOutput(this.Output);
                 }
             }
         }
