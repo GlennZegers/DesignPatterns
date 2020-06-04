@@ -3,7 +3,7 @@ using CircuitBuilder.Visitors;
 
 namespace CircuitBuilder.Ports
 {
-    public class AndPort : IPort
+    public class AndPort : INodePort
     {
         public List<bool> Input { get; set; }
         public int MinimalInputCount { get; }

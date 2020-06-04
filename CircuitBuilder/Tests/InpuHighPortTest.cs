@@ -4,7 +4,7 @@ namespace CircuitBuilder.Tests
 {   
     using NUnit.Framework;
     [TestFixture]
-    public class InpuHIghPortTest
+    public class InpuHighPortTest
     {
         [Test]
         public void OutputIsTrue()
