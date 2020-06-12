@@ -3,7 +3,7 @@ using CircuitBuilder.Visitors;
 
 namespace CircuitBuilder.Ports
 {
-    public class InputHighPort : IPort
+    public class InputHighPort : IInputPort
     {
         
         public List<bool> Input { get; set; }

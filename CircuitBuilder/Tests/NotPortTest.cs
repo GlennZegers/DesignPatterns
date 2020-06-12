@@ -7,7 +7,7 @@ namespace CircuitBuilder.Tests
     public class NotPortTest
     {
         [Test]
-        public void Flase()
+        public void False()
         {
             NotPort port = new NotPort();
             port.PreviousPorts.Add(new AndPort());

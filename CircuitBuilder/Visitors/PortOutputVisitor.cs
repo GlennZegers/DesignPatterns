@@ -3,100 +3,37 @@ using CircuitBuilder.Ports;
 
 namespace CircuitBuilder.Visitors
 {
+    // Visitor pattern
     public class PortOutputVisitor : IPortVisitor
     {
-        public void Visit(AndPort port)
+        public void Visit(IInputPort port)
         {
-            var fullString = "Andport "+ port.NodeIdentifier +" receives ";
+            Console.WriteLine(port.NodeIdentifier + " outputs " + port.Output);
+        }
+
+        public void Visit(INodePort port)
+        {
+            var fullString = port.GetType().Name + " " + port.NodeIdentifier + " receives ";
             foreach (var previousPort in port.PreviousPorts)
             {
-                fullString += previousPort.Output + " from " + previousPort.NodeIdentifier + " ,";
+                fullString += previousPort.Output + " from " + previousPort.NodeIdentifier + ", ";
             }
 
             fullString += "so output is: " + port.Output;
             Console.WriteLine(fullString);
         }
 
-        public void Visit(InputHighPort port)
+        public void Visit(IOutputPort port)
         {
-            Console.WriteLine(port.NodeIdentifier + " outputs true");
-        }
-
-        public void Visit(InputLowPort port)
-        {
-            Console.WriteLine(port.NodeIdentifier + " outputs false");
-        }
-
-        public void Visit(NandPort port)
-        {
-            var fullString = "Nandport "+ port.NodeIdentifier +" receives ";
+            var fullString = "!RESULT! " + port.GetType().Name + " " + port.NodeIdentifier + " receives ";
             foreach (var previousPort in port.PreviousPorts)
             {
-                fullString += previousPort.Output + " from " + previousPort.NodeIdentifier + " ,";
+                fullString += previousPort.Output + " from " + previousPort.NodeIdentifier + ", ";
             }
 
             fullString += "so output is: " + port.Output;
             Console.WriteLine(fullString);
         }
-
-        public void Visit(NorPort port)
-        {
-            var fullString = "Norport "+ port.NodeIdentifier +" receives ";
-            foreach (var previousPort in port.PreviousPorts)
-            {
-                fullString += previousPort.Output + " from " + previousPort.NodeIdentifier + " ,";
-            }
-
-            fullString += "so output is: " + port.Output;
-            Console.WriteLine(fullString);
-        }
-
-        public void Visit(NotPort port)
-        {
-            var fullString = "Notport "+ port.NodeIdentifier +" receives ";
-            foreach (var previousPort in port.PreviousPorts)
-            {
-                fullString += previousPort.Output + " from " + previousPort.NodeIdentifier + " ,";
-            }
-
-            fullString += "so output is: " + port.Output;
-            Console.WriteLine(fullString);
-        }
-
-        public void Visit(OrPort port)
-        {
-            var fullString = "Orport "+ port.NodeIdentifier +" receives ";
-            foreach (var previousPort in port.PreviousPorts)
-            {
-                fullString += previousPort.Output + " from " + previousPort.NodeIdentifier + " ,";
-            }
-
-            fullString += "so output is: " + port.Output;
-            Console.WriteLine(fullString);
-        }
-
-        public void Visit(ProbePort port)
-        {
-            var fullString = "!RESULT! Probeport "+ port.NodeIdentifier +" receives ";
-            foreach (var previousPort in port.PreviousPorts)
-            {
-                fullString += previousPort.Output + " from " + previousPort.NodeIdentifier + " ,";
-            }
-
-            fullString += "so output is: " + port.Output;
-            Console.WriteLine(fullString);
-        }
-
-        public void Visit(XorPort port)
-        {
-            var fullString = "Xorport "+ port.NodeIdentifier +" receives ";
-            foreach (var previousPort in port.PreviousPorts)
-            {
-                fullString += previousPort.Output + " from " + previousPort.NodeIdentifier + " ,";
-            }
-
-            fullString += "so output is: " + port.Output;
-            Console.WriteLine(fullString);
-        }
+        
     }
 }

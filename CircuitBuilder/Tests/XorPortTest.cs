@@ -7,7 +7,7 @@ namespace CircuitBuilder.Tests
     public class XorPortTest
     {
         [Test]
-        public void FlaseAndTrue()
+        public void FalseAndTrue()
         {
             XorPort port = new XorPort();
             port.PreviousPorts.Add(new AndPort());
@@ -20,7 +20,7 @@ namespace CircuitBuilder.Tests
         }
         
         [Test]
-        public void FlaseAndFalse()
+        public void FalseAndFalse()
         {
             XorPort port = new XorPort();
             port.PreviousPorts.Add(new AndPort());
@@ -41,6 +41,21 @@ namespace CircuitBuilder.Tests
             
             port.CalculateOutput(true);
             port.CalculateOutput(true);
+
+            Assert.AreEqual(false, port.Output);
+        }
+        
+        [Test]
+        public void TrueTrueAndFalse()
+        {
+            XorPort port = new XorPort();
+            port.PreviousPorts.Add(new AndPort());
+            port.PreviousPorts.Add(new AndPort());
+            port.PreviousPorts.Add(new AndPort());
+            
+            port.CalculateOutput(true);
+            port.CalculateOutput(true);
+            port.CalculateOutput(false);
 
             Assert.AreEqual(false, port.Output);
         }

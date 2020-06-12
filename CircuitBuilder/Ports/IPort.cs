@@ -16,6 +16,7 @@ namespace CircuitBuilder.Ports
         
         void CalculateOutput(bool input);
 
+        // Visitor pattern
         void Accept(IPortVisitor visitor);
     }
 }

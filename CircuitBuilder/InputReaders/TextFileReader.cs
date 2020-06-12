@@ -4,6 +4,7 @@ using System.Text.RegularExpressions;
 
 namespace CircuitBuilder.InputReaders
 {
+    // Strategy pattern
     public class TextFileReader : IInputReader
     {
         private string[] _fileLines;
@@ -14,9 +15,9 @@ namespace CircuitBuilder.InputReaders
         {
             _fileLines = File.ReadAllLines(path);
             _splitFile();
-            //TODO: error handling
         }
         
+        // Splitting file into nodes and edges part
         private void _splitFile()
         {
             _nodes = new List<string>();
@@ -25,12 +26,14 @@ namespace CircuitBuilder.InputReaders
             
             foreach (var s in _fileLines)
             {
+                // When this is true, the file has reached the edges
                 if (s == "")
                 {
                     areEdges = true;
                     continue;
                 }
                 
+                // Is comment
                 if (s.StartsWith("#"))
                 {
                     continue;
@@ -75,6 +78,7 @@ namespace CircuitBuilder.InputReaders
             return edgeList;
         }
 
+        // Remove all unnecessary characters 
         private string[] _cleanString(string input)
         {
             Regex.Replace(input, @"\s+", "");

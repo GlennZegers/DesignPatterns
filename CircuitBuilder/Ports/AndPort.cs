@@ -3,7 +3,7 @@ using CircuitBuilder.Visitors;
 
 namespace CircuitBuilder.Ports
 {
-    public class AndPort : IPort
+    public class AndPort : INodePort
     {
         public List<bool> Input { get; set; }
         public int MinimalInputCount { get; }
@@ -26,6 +26,7 @@ namespace CircuitBuilder.Ports
         public void CalculateOutput(bool input)
         {
             this.Input.Add(input);
+            // If port received all input, start calculating
             if (this.Input.Count == this.PreviousPorts.Count)
             {
                 var output = true;
@@ -47,7 +48,6 @@ namespace CircuitBuilder.Ports
 
         public void Accept(IPortVisitor visitor)
         {
-            
             visitor.Visit(this);
         }
     }

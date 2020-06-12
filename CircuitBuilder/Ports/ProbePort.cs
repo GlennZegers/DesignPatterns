@@ -4,7 +4,7 @@ using CircuitBuilder.Visitors;
 
 namespace CircuitBuilder.Ports
 {
-    public class ProbePort : IPort
+    public class ProbePort : IOutputPort
     {
         public List<bool> Input { get; set; }
         public int MinimalInputCount { get;}
