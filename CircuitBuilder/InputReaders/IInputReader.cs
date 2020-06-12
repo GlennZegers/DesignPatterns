@@ -2,6 +2,7 @@
 
 namespace CircuitBuilder.InputReaders
 {
+    // Strategy pattern
     public interface IInputReader
     {
         void Read(string path);

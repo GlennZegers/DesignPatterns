@@ -14,3 +14,7 @@ C:\Users\glenn\RiderProjects\CircuitBuilder\CircuitBuilder\bin\Debug\nunit.frame
 C:\Users\glenn\RiderProjects\CircuitBuilder\CircuitBuilder\bin\Debug\nunit.framework.pdb
 C:\Users\glenn\RiderProjects\CircuitBuilder\CircuitBuilder\bin\Debug\nunit.framework.xml
 C:\Users\glenn\RiderProjects\CircuitBuilder\CircuitBuilder\obj\Debug\CircuitBuilder.csproj.CopyComplete
+D:\School\Projecten\Rider projecten\Circuitbuilder\DesignPatterns\CircuitBuilder\bin\Debug\nunit.framework.dll
+D:\School\Projecten\Rider projecten\Circuitbuilder\DesignPatterns\CircuitBuilder\bin\Debug\nunit.framework.pdb
+D:\School\Projecten\Rider projecten\Circuitbuilder\DesignPatterns\CircuitBuilder\bin\Debug\nunit.framework.xml
+D:\School\Projecten\Rider projecten\Circuitbuilder\DesignPatterns\CircuitBuilder\obj\Debug\CircuitBuilder.csproj.CopyComplete

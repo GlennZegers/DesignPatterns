@@ -7,7 +7,7 @@ namespace CircuitBuilder.Tests
     public class AndPortTest
     {
         [Test]
-        public void FlaseAndTrue()
+        public void FalseAndTrue()
         {
             AndPort port = new AndPort();
             port.PreviousPorts.Add(new AndPort());
@@ -30,6 +30,21 @@ namespace CircuitBuilder.Tests
             port.CalculateOutput(true);
 
             Assert.AreEqual(true, port.Output);
+        }
+
+        [Test]
+        public void TrueTrueAndFalse()
+        {
+            AndPort port = new AndPort();
+            port.PreviousPorts.Add(new AndPort());
+            port.PreviousPorts.Add(new AndPort());
+            port.PreviousPorts.Add(new AndPort());
+            
+            port.CalculateOutput(true);
+            port.CalculateOutput(true);
+            port.CalculateOutput(false);
+
+            Assert.AreEqual(false, port.Output);
         }
     }
 }

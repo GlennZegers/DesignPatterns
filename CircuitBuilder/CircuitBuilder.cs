@@ -44,11 +44,11 @@ namespace CircuitBuilder
 
         public List<IPort> GetPorts()
         {
-            _testPorts();
+            _testIfPortsAreConnected();
             return this._ports;
         }
 
-        private void _testPorts()
+        private void _testIfPortsAreConnected()
         {
             foreach (var port in this._ports)
             {

@@ -7,7 +7,7 @@ namespace CircuitBuilder.Tests
     public class NandPortTest
     {
         [Test]
-        public void FlaseAndTrue()
+        public void FalseAndTrue()
         {
             NandPort port = new NandPort();
             port.PreviousPorts.Add(new AndPort());
@@ -20,7 +20,7 @@ namespace CircuitBuilder.Tests
         }
         
         [Test]
-        public void FlaseAndFalse()
+        public void FalseAndFalse()
         {
             NandPort port = new NandPort();
             port.PreviousPorts.Add(new AndPort());
@@ -43,6 +43,21 @@ namespace CircuitBuilder.Tests
             port.CalculateOutput(true);
 
             Assert.AreEqual(false, port.Output);
+        }
+        
+        [Test]
+        public void TrueTrueAndFalse()
+        {
+            NandPort port = new NandPort();
+            port.PreviousPorts.Add(new AndPort());
+            port.PreviousPorts.Add(new AndPort());
+            port.PreviousPorts.Add(new AndPort());
+            
+            port.CalculateOutput(true);
+            port.CalculateOutput(true);
+            port.CalculateOutput(false);
+
+            Assert.AreEqual(true, port.Output);
         }
     }
 }

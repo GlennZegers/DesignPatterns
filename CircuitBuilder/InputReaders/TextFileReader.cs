@@ -4,6 +4,7 @@ using System.Text.RegularExpressions;
 
 namespace CircuitBuilder.InputReaders
 {
+    // Strategy pattern
     public class TextFileReader : IInputReader
     {
         private string[] _fileLines;

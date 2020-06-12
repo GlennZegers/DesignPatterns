@@ -3,7 +3,7 @@ using CircuitBuilder.Visitors;
 
 namespace CircuitBuilder.Ports
 {
-    public class NorPort : IPort
+    public class NorPort : INodePort
     {
         public List<bool> Input { get; set; }
         public int MinimalInputCount { get; }

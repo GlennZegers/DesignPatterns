@@ -39,6 +39,7 @@ namespace CircuitBuilder
             _consoleView.Print(ports, this);
         }
 
+        // Singleton pattern
         public InputParser GetInputParser()
         {
             if (_inputParser == null)
